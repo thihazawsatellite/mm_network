@@ -1,283 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUMON NETWORK GLOBAL</title>
-    <meta name="description" content="ENJOY FREE LIVE IPTV">
-    <meta name="keywords" content="Watch live sports streaming online, including football, basketball, baseball, hockey, and more. Stream your favorite sports teams and events in HD, with no cable subscription required.">
-    <meta name="author" content="Mostak Vai">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co.com/sqX1gK4/Picsart-24-10-13-00-13-32-900.png">
+	<head>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.css" />
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
-<link rel="me" href="https://t.me/bdix_hub" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-</head>
 
-<body>
-    <!-- Custom Text Section -->
-    <div class="custom-text">
-       <header> 
-        <a href="https://sumon-network.vercel.app/"><img src="https://i.ibb.co.com/sqX1gK4/Picsart-24-10-13-00-13-32-900.png" class="responsive-img" style="width: 200px; height: auto;"></a>
-       </div>
-   
+		<link rel="icon" type="image/png" href="https://static.vecteezy.com/system/resources/previews/010/148/316/original/tv-icon-sign-symbol-design-free-png.png" sizes="32x32">
 
-    <!-- Video Player Section -->
-    <div class="video-player">
-        
-        <div id="videoLoading" class="loading">
-            <p>Loading video...</p>
-        </div>
-        <video id="videoPlayer" controls crossorigin playsinline unmuted autoplay>
-            <source id="videoSource" type="application/vnd.apple.mpegurl" src="">
-        </video>
-    </div>
-    <div class="col-md-12">
-<style> 
-.notice-movies{margin-top:3px;background:#ff0000;color:white;position:relative;padding:10px;overflow:hidden;font-family:var(--font-secondary);border-radius:7px}.notice-movies::before{content:'';position:absolute;border-left:17px solid var(--black);border-bottom:17px solid var(--black);border-top:17px solid transparent;border-right:17px solid transparent;left:98px;top:0;z-index:1}.notice-movies::after{content:'Notice:';position:absolute;height:100%;padding:0 6px;line-height:43px;background:Green;color:white;font-family:var(--font-primary);font-weight:600;left:0;top:0} </style>
-<center>
-     <marquee class="notice-movies" scrollamount="4">
-       ➤ সুমন নেটওয়ার্ককে আপনাকে স্বাগতম Welcome To Sumon Network প্রিয় গ্রাহক আপনার অবগতির জন্য জানানো যাচ্ছে যে আমাদের এই ওয়েবসাইটির কাজ চলছে তাই টিভি দেখতে কিছু চ্যানেল সমস্যা করতে পারে আমাদের এক্সপার্ট টিম বিষয়টি পর্যবেক্ষণ করছেন ধন্যবাদ....?
-     </marquee>
-</center>
-    </div>
-    
-        <div id="channelLoading" class="loading">
-            <p>Loading channels...</p>
-        </div>
-        <div class="channel-buttons" id="channelList" style="display: none;">
-            <!-- Channels will be dynamically loaded here -->
-        </div>
-    </div>
+		<meta charset="UTF-8">
+		<meta name="Sumon Network Global" content="width=device-width, initial-scale=1.0">
+		<title>SUMON NETWORK GLOBAL- All Live TV For Free</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
 
-    <script>
-        const video = document.getElementById('videoPlayer');
-        const videoLoading = document.getElementById('videoLoading');
-        const channelLoading = document.getElementById('channelLoading');
-        const channelList = document.getElementById('channelList');
+			header {
+				background-color: #010093;
+				color: #fff;
+				text-align: center;
+				padding: 20px;
+			}
 
-        // Display video loading animation
-        video.addEventListener('waiting', function () {
-            videoLoading.style.display = 'block';
-        });
+			h1 {
+				margin: 0;
+			}
 
-        video.addEventListener('playing', function () {
-            videoLoading.style.display = 'none';
-        });
+			main {
+				padding: 20px;
+			}
 
-        // Load demo video when the page loads
-        document.addEventListener('DOMContentLoaded', function () {
-            const demoVideoUrl = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
-            loadVideo(demoVideoUrl);
+			footer {
+				background-color: #00b303;
+				color: #fff;
+				padding: 10px;
+				text-align: center;
+			}
 
-            // Fetch and load channels
-            loadChannels();
-        });
+			ul.social {
+				list-style-type: none;
+				padding: 0;
+			}
 
-        function loadVideo(sourceUrl) {
-            if (Hls.isSupported()) {
-                if (window.hls) {
-                    window.hls.destroy();
-                }
-                var hls = new Hls();
-                hls.loadSource(sourceUrl);
-                hls.attachMedia(video);
-                window.hls = hls;
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = sourceUrl;
-            }
-            video.play();
-        }
+			ul.social li {
+				display: inline;
+				margin-right: 10px;
+			}
 
-        
+			ul.social li a {
+				color: #fff;
+				text-decoration: none;
+			}
 
-                        lines.forEach(line => {
-                            if (line.startsWith('#EXTINF')) {
-                                const logoMatch = line.match(/tvg-logo="(.*?)"/);
-                                const nameMatch = line.match(/,(.*)/);
-                                if (logoMatch && nameMatch) {
-                                    currentChannel.logo = logoMatch[1];
-                                    currentChannel.name = nameMatch[1];
-                                }
-                            } else if (line.startsWith('http')) {
-                                currentChannel.url = line.trim();
-                                channels.push(currentChannel);
-                                currentChannel = {};
-                            }
-                        });
+			.search-container {
+				position: relative;
+				width: 100%;
+				max-width: 600px;
+				margin: auto;
+				margin-bottom: 20px;
+			}
 
-                        channels.forEach(channel => {
-                            const channelButton = document.createElement('a');
-                            channelButton.href = "#";
-                            channelButton.classList.add('channel-link');
-                            channelButton.setAttribute('data-link', channel.url);
+			.search-box {
+				width: calc(100% - 110px);
+				/* Adjusted width to accommodate the button */
+				padding: 12px 20px;
+				border: 2px solid #ccc;
+				border-radius: 25px;
+				outline: none;
+				font-size: 16px;
+				transition: all 0.3s ease-in-out;
+			}
 
-                            const logoImg = document.createElement('img');
-                            logoImg.src = channel.logo;
-                            logoImg.alt = channel.name + ' Logo';
+			.search-box:focus {
+				border-color: #ff6600;
+				box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+			}
 
-                            channelButton.appendChild(logoImg);
-                            channelList.appendChild(channelButton);
-                        });
+			.search-button {
+				position: absolute;
+				right: 10px;
+				padding: 16px 20px;
+				background-color: #ff0000;
+				color: #fff;
+				border: none;
+				border-radius: 25px;
+				cursor: pointer;
+				outline: none;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease-in-out;
+			}
 
-                        // Display channels after loading
-                        channelLoading.style.display = 'none';
-                        channelList.style.display = 'flex';
+			.search-button:hover {
+				background-color: #ff6600;
+			}
 
-                        // Add event listeners to channel links
-                        document.querySelectorAll('.channel-link').forEach(function (link) {
-                            link.addEventListener('click', function (event) {
-                                event.preventDefault();
-                                const newSource = this.getAttribute('data-link');
-                                loadVideo(newSource);
-                            });
-                        });
-                    });
-            }, 2000); // Simulating a delay for demonstration
-        }
-    </script>
+			.product-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+				gap: 20px;
+			}
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #181818;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+			.product {
+				background-color: #fff;
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				cursor: pointer;
+				text-decoration: none;
+			}
 
-        /* Custom Text Styling */
-        .custom-text {
-            margin-top: 20px;
-            text-align: center;
-        }
+			.product img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 5px;
+			}
 
-        .custom-text h1 {
-            font-size: 2rem;
-            color: #4CAF50;
-            background-color: #222;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        }
+			.product h2 {
+				margin: 10px 0;
+				color: #000;
+				text-decoration: none;
+			}
 
-        .video-player {
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
-            background-color: #1a1a1a;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 900px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+			.no-products {
+				text-align: center;
+				font-size: 1.5em;
+				color: red;
+				margin: 20px 0;
+			}
 
-        .video-player h2 {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+			@media (max-width: 767px) {
+				.product-grid {
+					grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+					gap: 20px;
+				}
 
-        .video-player video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            border: 2px solid #4CAF50;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        }
+				.product {
+					padding: 10px;
+				}
 
-        .loading {
-            font-size: 18px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 10px;
-            display: block;
-            text-align: center;
-        }
+				.search-container {
+					margin-bottom: 10px;
+				}
 
-        .channel-list {
-            background-color: #2b2b2b;
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 900px;
-            text-align: center;
-        }
+				.search-box {
+					width: calc(100% - 60px);
+					/* Adjusted width to accommodate the button */
+				}
 
-        .channel-list h2 {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+				.search-button {
+					right: 25px;
+				}
+			}
+		</style>
+		<link rel="me" href="https://www.blogger.com/profile/01495146400153620435" />
+		<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109' />
+		<meta name='google-adsense-platform-domain' content='blogspot.com' />
+	</head>
 
-        .channel-buttons {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+	<body>
+		<header>
+			<h1>Sumon Network Live</h1>
+			<br />
 
-        .channel-buttons a {
-            background-color: #333;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 10px;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
+			<div class="col-md-12">
+				<style>
+					.notice-movies {
+						margin-top: 3px;
+						background: #ff0000;
+						color: white;
+						position: relative;
+						padding: 10px;
+						overflow: hidden;
+						font-family: var(--font-secondary);
+						border-radius: 7px
+					}
 
-        .channel-buttons a img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-        }
+					.notice-movies::before {
+						content: '';
+						position: absolute;
+						border-left: 17px solid var(--black);
+						border-bottom: 17px solid var(--black);
+						border-top: 17px solid transparent;
+						border-right: 17px solid transparent;
+						left: 98px;
+						top: 0;
+						z-index: 1
+					}
 
-        .channel-buttons a:hover {
-            background-color: #4CAF50;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
-        }
+					.notice-movies::after {
+						content: 'Notice:';
+						position: absolute;
+						height: 100%;
+						padding: 0 6px;
+						line-height: 43px;
+						background: Green;
+						color: white;
+						font-family: var(--font-primary);
+						font-weight: 600;
+						left: 0;
+						top: 0
+					}
+				</style>
+				<center>
+					<marquee class="notice-movies" scrollamount="4">
+						➤ সুমন নেটওয়ার্ককে আপনাকে স্বাগতম Welcome To Sumon Network প্রিয় গ্রাহক আপনার অবগতির জন্য জানানো যাচ্ছে যে টিভি দেখার সময় কোন চ্যানেল সমস্যা করলে তাৎক্ষণিক আমাদের কে জানান ধন্যবাদ কল ০৯৬৩৮৫৮০০৮৮.
+					</marquee>
+				</center>
+			</div>
 
-        @media (max-width: 768px) {
-            .video-player,
-            .channel-list {
-                width: 100%;
-                padding: 10px;
-            }
+			<br />
 
-            .channel-buttons a {
-                width: 80px;
-                height: 80px;
-            }
+			<div class="search-container">
+				<input type="text" id="searchBox" placeholder="Search channel..." class="search-box">
+				<button id="searchButton" class="search-button">Search</button>
+			</div>
+		</header>
 
-            .channel-buttons a img {
-                width: 60px;
-                height: 60px;
-            }
-        }
-    </style>
+		<main id="products" class="product-grid">
+			<!-- Product Grid will be generated dynamically -->
+		</main>
 
-</body>
+		<footer>
 
-</html>
+
+
+			<ul class="social">
+
+				<div style="text-align: center;"><span style="font-family: arial;"><span style="color: #ffffff;">Powered by:</span> <span style="color: blue;">SUMON NETWORK GLOBAL</span> </div>
+			</ul>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// DOM elements
+				const productsContainer = document.getElementById("products");
+				const searchButton = document.getElementById("searchButton");
+
+				// Product data
+				const products = [
+
+					{
+						name: "T Sports Live 01",
+						image: "https://image.tsports.com/images/mobile_logo/1719672720-LIVE.jpg",
+						link: "https://allinoneott.com/live/player.php?url=https%3A%2F%2Flive-cdn.tsports.com%2Flive-01%2Findex.m3u8"
+					},
+
+					{
+						name: "T Sports Live 02",
+						image: "https://image.tsports.com/images/mobile_logo/1719672720-LIVE.jpg",
+						link: "https://allinoneott.com/live/player.php?url=https%3A%2F%2Flive-cdn.tsports.com%2Flive-02%2Findex.m3u8"
+					},
+
+					{
+						name: "T Sports HD",
+						image: "https://edge01.iptv.digijadoo.net/static/t_sports.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=t_sports"
+					},
+
+
+					{
+						name: "Sony Aat",
+						image: "https://images.toffeelive.com/images/program/343/logo/240x240/mobile_logo_496322001666780228.png",
+						link: "https://stream.imotv.online/toffe/?play=e96cb72a3787"
+					},
+					{
+						name: "Zee Bangla",
+						image: "https://i.postimg.cc/FRDK6FxY/Zee-Bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeebanglahd1/default/zeebanglahd1.m3u8"
+					},
+					{
+						name: "Zee Bangla HD",
+						image: "https://i.postimg.cc/q7HXJQH8/Zee-Bangla-HD.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://entezeetv.fun/bdcast/hls/index.m3u8?id=2oxadfdx&e=.m3u8|Referer=https://entezeetv.fun/bdcast//"
+					},
+
+					{
+						name: "Star Jalsha",
+						image: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Star_Jalsha_logo_2023.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://yupptvcatchupire.yuppcdn.net/preview/starjalsha/1800.m3u8"
+					},
+					{
+						name: "Zee Bangla Cinema",
+						image: "https://i.postimg.cc/kGHYf86f/Zee-Bangla-Cinema.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Zeebanglacinema1/default/zeebanglacinema1-audio_208482_und=208000-video=2137600.m3u8"
+					},
+
+					{
+						name: "Zee Action",
+						image: "https://5.imimg.com/data5/SELLER/Default/2023/3/XU/BU/RX/58311714/zee-action-advertising-services-500x500.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Zeeaction1/default/zeeaction.m3u8"
+					},
+
+					{
+						name: "Colors Bangla",
+						image: "https://upload.wikimedia.org/wikipedia/en/7/7b/Colors_Bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://yupptvcatchupire.yuppcdn.net/preview/colorsbanglahd/800.m3u8"
+					},
+					{
+						name: "Zee Cinema",
+						image: "https://edge01.iptv.digijadoo.net/static/zee_cinema.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeecinema1/default/zeecinema1.m3u8"
+					},
+					{
+						name: "Zee Cinema HD",
+						image: "https://bdixtv24.com/uploads/tv_image/zee-cinema.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeecinemahd1/default/zeecinemahd1-audio_208482_und=208000-video=1087600.m3u8"
+					},
+					{
+						name: "Zee TV HD",
+						image: "https://bdixtv24.com/uploads/tv_image/sm/zee-tv-hd.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Zeetvhd1/default/zeetvhd1-audio_208482_und=208000-video=2137600.m3u8"
+					},
+
+					{
+						name: "Peace TV Bangla",
+						image: "https://static.wikia.nocookie.net/etv-gspn-bangla/images/5/5b/Peace_TV_Bangla_HD_logo.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://dzkyvlfyge.erbvr.com/PeaceTvBangla/tracks-v3a1/mono.m3u8?sid=pRVSKrZs1UCUfyLtHR71Qw"
+					},
+					{
+						name: "9xm",
+						image: "https://tinyurl.com/bdzbrynm",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d75dqofg5kmfk.cloudfront.net/bpk-tv/9XM/default/9XM-audio_208482_und=208000-video=2137600.m3u8"
+					},
+					{
+						name: "Jamuna TV",
+						image: "https://edge01.iptv.digijadoo.net/static/jamuna_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://global.ncare.live/live-orgin/jamuna-test-sample-ok.stream/playlist.m3u8"
+					},
+
+					{
+						name: "Somoy News",
+						image: "https://edge01.iptv.digijadoo.net/static/somoy_news.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://customer-t0nw9oic5pvyrmd4.cloudflarestream.com/0e4195487bdb9b9dd9a2182651430e50/manifest/video.m3u8"
+					},
+
+					{
+						name: "ATN Bangla",
+						image: "https://edge01.iptv.digijadoo.net/static/atn_bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://global.ncare.live/live-orgin/atnbd-8-org.stream/playlist.m3u8"
+					},
+					{
+						name: "ATN News",
+						image: "https://edge01.iptv.digijadoo.net/static/atn_news.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=atn_news"
+					},
+					{
+						name: "Madani Channel Bangla",
+						image: "https://yt3.googleusercontent.com/E7jVHesMJzkUDkmwqhNvQZlh68kPaT-wyYno8vyyhVKl3sgBk5dDp77tC_RM2bnplXLtkZ0sJQ=s900-c-k-c0x00ffffff-no-rj",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://streaming.madanichannel.tv/static/streaming-playlists/hls/d3e49b76-ac06-4689-a641-9200445b647f/1.m3u8"
+					},
+					{
+						name: "Al Jazeera English HD",
+						image: "https://edge01.iptv.digijadoo.net/static/al_jazeera.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=al_jazeera"
+					},
+					{
+						name: "Gazi TV",
+						image: "https://edge01.iptv.digijadoo.net/static/gazi_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=gazi_tv_hd"
+					},
+					{
+						name: "Ananda TV",
+						image: "https://edge01.iptv.digijadoo.net/static/ananda_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=ananda_tv"
+					},
+					{
+						name: "Arirang",
+						image: "https://edge01.iptv.digijadoo.net/static/arirang.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=arirang"
+					},
+					{
+						name: "Asian Tv",
+						image: "https://edge01.iptv.digijadoo.net/static/asian_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://mtlivestream.com/asian/ytlive/index.m3u8"
+					},
+					{
+						name: "BBC Lifestyle",
+						image: "https://edge01.iptv.digijadoo.net/static/bbc_lifestyle.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=bbc_lifestyle"
+					},
+					{
+						name: "BBC World News",
+						image: "https://edge01.iptv.digijadoo.net/static/bbc_world.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=bbc_world"
+					},
+					{
+						name: "BTV World",
+						image: "https://edge01.iptv.digijadoo.net/static/btv_world.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=btv_world"
+					},
+					{
+						name: "Bangla TV",
+						image: "https://edge01.iptv.digijadoo.net/static/bangla_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://entezeetv.fun/bdcast/hls/index.m3u8?id=xhv98NSI&e=.m3u8|Referer=https://entezeetv.fun/bdcast//"
+					},
+					{
+						name: "Bangla Vision",
+						image: "https://edge01.iptv.digijadoo.net/static/bangla_vision.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://global.ncare.live/live-orgin/banglav000.stream/playlist.m3u8"
+					},
+					{
+						name: "Bijoy TV",
+						image: "https://edge01.iptv.digijadoo.net/static/bijoy_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=bijoy_tv"
+					},
+					{
+						name: "Boishakhi Tv",
+						image: "https://edge01.iptv.digijadoo.net/static/boishakhi_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://entezeetv.fun/bdcast/hls/index.m3u8?id=e0cfe755&e=.m3u8|Referer=https://entezeetv.fun/bdcast//"
+					},
+					{
+						name: "CBEEBIES BBC",
+						image: "https://edge01.iptv.digijadoo.net/static/cbeebies_asia.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=cbeebies_asia"
+					},
+					{
+						name: "Republic Bangla TV",
+						image: "https://i.postimg.cc/wxJnq4NB/Republic-Bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://entezeetv.fun/bdcast/hls/index.m3u8?id=d60o0c54&e=.m3u8|Referer=https://entezeetv.fun/bdcast//"
+					},
+					{
+						name: "Enterr10  Bangla",
+						image: "https://i.postimg.cc/Bvc76qGZ/Enterr10-Bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://live-bangla.akamaized.net/liveabr/playlist.m3u8"
+					},
+					{
+						name: "Sangeet Bangla",
+						image: "https://i.postimg.cc/XvD5ZgTH/Sangeet-Bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://entezeetv.fun/bdcast/hls/index.m3u8?id=4eavizab&e=.m3u8|Referer=https://entezeetv.fun/bdcast//"
+					},
+					{
+						name: "And TV HD",
+						image: "https://bdixtv24.com/uploads/tv_image/sm/and-tv-hd.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://d75dqofg5kmfk.cloudfront.net/bpk-tv/Andtvhd1/default/andtvhd1-audio_208482_und=208000-video=2137600.m3u8"
+					},
+					{
+						name: "TV9 Bangla",
+						image: "https://i.postimg.cc/J0zSc30y/TV9-Bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://entezeetv.fun/bdcast/hls/index.m3u8?id=he4be5di&e=.m3u8|Referer=https://entezeetv.fun/bdcast//"
+					},
+					{
+						name: "CGTN News",
+						image: "https://edge01.iptv.digijadoo.net/static/cgtn_news.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=cgtn_news"
+					},
+					{
+						name: "CNN",
+						image: "https://edge01.iptv.digijadoo.net/static/cnn.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=cnn"
+					},
+					{
+						name: "Channel 24",
+						image: "https://edge01.iptv.digijadoo.net/static/channel_24.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=channel_24"
+					},
+					{
+						name: "Channel 9",
+						image: "https://edge01.iptv.digijadoo.net/static/channel_9.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=channel_9"
+					},
+					{
+						name: "Channel i",
+						image: "https://edge01.iptv.digijadoo.net/static/channel_i.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=channel_i"
+					},
+					{
+						name: "DBC News",
+						image: "https://edge01.iptv.digijadoo.net/static/dbc_news.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=dbc_news"
+					},
+					{
+						name: "DW",
+						image: "https://edge01.iptv.digijadoo.net/static/dw.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=dw"
+					},
+					{
+						name: "Deepto TV",
+						image: "https://edge01.iptv.digijadoo.net/static/deepto_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://byphdgllyk.gpcdn.net/hls/DeeptoTV/index.m3u8"
+					},
+					{
+						name: "Desh TV",
+						image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Desh_tv_logo.jpg",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=desh_tv"
+					},
+					{
+						name: "Duronto TV",
+						image: "https://edge01.iptv.digijadoo.net/static/duronto_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=duronto_tv"
+					},
+					{
+						name: "Ekattor TV",
+						image: "https://edge01.iptv.digijadoo.net/static/ekattor_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=ekattor_tv"
+					},
+					{
+						name: "Ekushey TV",
+						image: "https://edge01.iptv.digijadoo.net/static/ekushey_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://entezeetv.fun/bdcast/hls/index.m3u8?id=6ed8e577&e=.m3u8|Referer=https://entezeetv.fun/bdcast//"
+					},
+					{
+						name: "Fox Action Movies",
+						image: "https://edge01.iptv.digijadoo.net/static/fox_action_movies_hd.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=fox_action_movies_hd"
+					},
+					{
+						name: "France 24",
+						image: "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/FRANCE_24_logo.svg/800px-FRANCE_24_logo.svg.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=france24_francais"
+					},
+					{
+						name: "Gaan Bangla",
+						image: "https://edge01.iptv.digijadoo.net/static/gaan_bangla.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=gaan_bangla"
+					},
+
+					{
+						name: "Independent TV",
+						image: "https://edge01.iptv.digijadoo.net/static/independent_tv.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=independent_tv"
+					},
+					{
+						name: "MACAU Lotus",
+						image: "https://edge01.iptv.digijadoo.net/static/macau_lotus.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=macau_lotus"
+					},
+					{
+						name: "MY TV",
+						image: "https://upload.wikimedia.org/wikipedia/en/4/45/Mytv_Bangladesh_Logo.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=my_tv"
+					},
+					{
+						name: "Maasranga",
+						image: "https://edge01.iptv.digijadoo.net/static/maasranga.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=maasranga"
+					},
+					{
+						name: "NHK World",
+						image: "https://edge01.iptv.digijadoo.net/static/nhk_world.png",
+						link: "https://allinoneott.com/live/liveplay.php?m3u8=https://allinoneott.com/live/livetv.php?channel=nhk_world"
+					},
+					{
+						name: "NTV",
+						image: "https://edge01.iptv.digijadoo.net/static/ntv.png",
+						link: "https://allinoneott.com/live/liveplay.p
