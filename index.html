@@ -102,7 +102,7 @@
         function loadChannels() {
             // Simulate delay for loading channels
             setTimeout(() => {
-                fetch('https://rentry.co/SUMON_NETWORK_BDIX/raw')
+                fetch('https://raw.githubusercontent.com/sumonhasan007/Sumon_network/refs/heads/main/Sumon.NetworkPlaylist.m3u')
                     .then(response => response.text())
                     .then(data => {
                         const lines = data.split('\n');
