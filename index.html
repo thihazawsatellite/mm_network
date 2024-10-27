@@ -102,7 +102,7 @@
         function loadChannels() {
             // Simulate delay for loading channels
             setTimeout(() => {
-                fetch('https://raw.githubusercontent.com/OvagaTv/OvagaTv/refs/heads/main/Sumon.NET.tv.m3u')
+                fetch('https://rentry.co/SUMON_NETWORK_BDIX/raw')
                     .then(response => response.text())
                     .then(data => {
                         const lines = data.split('\n');
