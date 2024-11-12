@@ -102,7 +102,7 @@
         function loadChannels() {
             // Simulate delay for loading channels
             setTimeout(() => {
-                fetch('https://byte-capsule-2x.onrender.com/api/aynaott/ns_player.m3u')
+                fetch('https://raw.githubusercontent.com/hdoktvltd/hd-live.tv/refs/heads/main/playlist.m3u')
                     .then(response => response.text())
                     .then(data => {
                         const lines = data.split('\n');
