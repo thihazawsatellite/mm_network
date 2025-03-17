@@ -77,7 +77,7 @@
 
         // Load demo video when the page loads
         document.addEventListener('DOMContentLoaded', function () {
-            const demoVideoUrl = 'https://toffee.iptvbd.xyz/api/sony_aath.m3u8';
+            const demoVideoUrl = 'http://103.163.247.39/local_out/ekhontv/video.m3u8?token=At5F1MFZYnciB3';
             loadVideo(demoVideoUrl);
 
             // Fetch and load channels
@@ -102,7 +102,7 @@
         function loadChannels() {
             // Simulate delay for loading channels
             setTimeout(() => {
-                fetch('https://raw.githubusercontent.com/hdoktvltd/hd-live.tv/refs/heads/main/playlist.m3u')
+                fetch('https://raw.githubusercontent.com/sumonhasan007/Sumon_network/refs/heads/main/BDIX-148.m3u')
                     .then(response => response.text())
                     .then(data => {
                         const lines = data.split('\n');
